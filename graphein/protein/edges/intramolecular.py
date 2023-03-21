@@ -221,7 +221,7 @@ def add_contacts_edge(G: nx.Graph, interaction_type: str) -> nx.Graph:
         log.info("No 'contacts_df' found in G.graph. Running GetContacts.")
 
         G.graph["contacts_df"] = get_contacts_df(
-            G.graph["config"].get_contacts_config, G.graph["pdb_id"]
+            G.graph["config"].get_contacts_config, G.graph["pdb_code"]
         )
 
     contacts = G.graph["contacts_df"]
